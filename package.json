@@ -1,0 +1,16 @@
+{
+  "name": "udemy-node",
+  "version": "1.0.0",
+  "description": "curso udemy node js",
+  "main": "src/index.js",
+  "scripts": {
+    "go": "node src/index.js"
+  },
+  "author": "Wesley Campagna",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  }
+}
