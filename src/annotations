@@ -1,0 +1,4 @@
+- response.render(page) tambem possui parametros que desconhecia.
+    - possui callback e é possivel passar um json para a pagina que 
+    irá ser renderizada. <response.render('page', {chave : valor})
+
