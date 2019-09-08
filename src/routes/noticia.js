@@ -1,15 +1,14 @@
-let dbConnection = require('../model/database-connection')
+// let dbConnection = require('../model/database-connection')
 
 module.exports = (app) => {
 
-    connection = dbConnection()
     app.get('/noticia', (req, res) => {
-  
-        connection.query('SELECT * FROM noticias', (err, result) => {
-            // isso n sabia -> poder passar um json no render
-            !err ? res.render('noticias', {noticias : result}) : res.send({'error': 404})
-        })
+        
+        const connection = app.src.model.databaseconnection()
+        const noticias = app.src.model.noticiasModel
 
-/*         res.render('noticias') */
+        noticias.getNewById(1, connection, (err, result) => {
+            !err ? res.render('noticias/noticia', {noticia : result}) : res.send({'error': 404})
+        })
     })
 }
