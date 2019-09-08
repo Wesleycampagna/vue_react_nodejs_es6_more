@@ -1,14 +1,27 @@
-module.exports = () => {
-    
-    this.getAllNews = (connection, callback) => {
+function Noticias (connection) {
+
+    _connection = connection
+
+    this.getAllNews = (callback) => {
         statement = 'SELECT * FROM noticias'
-        connection.query(statement, callback)
+        _connection.query(statement, callback)
     }
 
-    this.getNewById = (id, connection, callback) => {
+    this.getNewById = (id, callback) => {
         statement = 'SELECT * FROM noticias WHERE id_noticia = ' + id
-        connection.query(statement, callback)
+        _connection.query(statement, callback)
     }
 
-    return this
+    this.save = (data, callback) => {
+        console.log('save?')
+        /* statement = 'INSERT INTO noticias (titulo, noticia) values (' 
+        statement = statement.concat(data.titulo, ', ', data.noticia, ')')
+        connection.query(statement, callback) */
+        _connection.query('INSERT INTO noticias set ?', data, callback)
+    }
+
+}
+
+module.exports = () => {
+    return Noticias
 }   

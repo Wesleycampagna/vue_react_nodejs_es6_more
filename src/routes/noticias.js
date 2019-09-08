@@ -24,9 +24,9 @@ module.exports = (app) => {
     app.get('/noticias', (req, res) => {
         
         const connection = app.src.model.databaseconnection()
-        const noticias = app.src.model.noticiasModel
+        const noticias = new app.src.model.noticiasModel(connection)
 
-        noticias.getAllNews(connection,  (err, result) => {
+        noticias.getAllNews((err, result) => {
             // isso n sabia -> poder passar um json no render
             !err ? res.render('noticias/noticias', {noticias : result}) : res.send({'error': 404})
         })

@@ -9,6 +9,10 @@ noticiasPage(app)
 formularioPage(app)
  */
 
+/* const formController = require('./controllers/admin/formulario-noticia') 
+
+formController(app) */
+
 
 // start server on the specified port and binding host
 app.listen(5050, function() {

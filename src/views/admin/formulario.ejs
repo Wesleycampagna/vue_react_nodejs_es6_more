@@ -7,6 +7,22 @@
     <title>Form</title>
 </head>
 <body>
-    Alo jovem preencha
+    <h1>Adicionar uma Notícia</h1>
+
+    <form action="/noticias/salvar" method="POST">
+        <div>
+            <label>título</label>
+            <input type="text", placeholder="Insira o título"
+            id="titulo" name="titulo">
+        </div>
+        <div>
+                <label>noticia</label>
+                <textarea type="text", rows="5" cols="30" placeholder="Insira a noticia"
+                id="noticia" name="noticia"></textarea>
+                <br/>
+                <input type="submit" value="enviar">
+            </div>
+
+    </form>
 </body>
 </html>

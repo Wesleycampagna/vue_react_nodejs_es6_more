@@ -2,3 +2,12 @@
     - possui callback e é possivel passar um json para a pagina que 
     irá ser renderizada. <response.render('page', {chave : valor})
 
+
+(3) formas de se fazer a configuração dos controllers
+1 - atribui  em indexedDB.js a criação do controlador
+2 - dentro do module.exports aproveitando do app
+3 - metodo a parte que retorna */
+
+/* Uso do redirect depois foi show */
+
+/* É importante sempre que fizer um post usar redirect para quebrar o F5 
