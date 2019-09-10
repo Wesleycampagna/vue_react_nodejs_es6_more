@@ -19,6 +19,7 @@ module.exports = (app) => {
     })
 } */
 
+/* The second way
 module.exports = (app) => {
 
     app.get('/noticias', (req, res) => {
@@ -43,4 +44,11 @@ module.exports = (app) => {
             !err ? res.render('noticias/noticia', {noticia : result}) : res.send({'error': 404})
         })
     })
+} */
+
+module.exports = (app) => {
+    const noticiaController = require('../controllers/noticiaController')(app)
+
+    app.get('/noticias', noticiaController.noticias)    
+    app.get('/noticia', noticiaController.noticia)
 }

@@ -1,9 +1,6 @@
 module.exports = (app) => {
-    app.get('/', (req, res) => {
-        res.render('home/index')
-    })
+    const controllHome = require('../controllers/homeController')(app)
 
-    app.get('/home', (req, res) => {
-        res.render('home/index')
-    })
+    app.get('/', controllHome.home)
+    app.get('/home', controllHome.home)
 }

@@ -1,14 +1,14 @@
 function Noticias (connection) {
 
-    _connection = connection
+    let _connection = connection
 
     this.getAllNews = (callback) => {
-        statement = 'SELECT * FROM noticias'
+        let statement = 'SELECT * FROM noticias'
         _connection.query(statement, callback)
     }
 
     this.getNewById = (id, callback) => {
-        statement = 'SELECT * FROM noticias WHERE id_noticia = ' + id
+        let statement = 'SELECT * FROM noticias WHERE id_noticia = ' + id
         _connection.query(statement, callback)
     }
 
@@ -19,7 +19,13 @@ function Noticias (connection) {
         /* statement = 'INSERT INTO noticias (titulo, noticia) values (' 
         statement = statement.concat(data.titulo, ', ', data.noticia, ')')
         connection.query(statement, callback) */
-        _connection.query('INSERT INTO noticias set ?', data, callback)
+        let statement = 'INSERT INTO noticias set ?'
+        _connection.query(statement, data, callback)
+    }
+
+    this.getFiveLast = (callback) => {
+        let statement = 'SELECT * FROM noticias ORDER BY data_criacao DESC LIMIT 5'
+        _connection.query(statement,  callback)
     }
 }
 

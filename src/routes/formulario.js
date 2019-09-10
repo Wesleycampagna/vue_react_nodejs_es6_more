@@ -1,11 +1,6 @@
 module.exports = (app) => {
-    app.get('/formulario', (req, res) => {
-        res.render('admin/formulario', {error: null, news: {}})
-    })
-
-    app.post('/noticias/salvar', app.controllForm.save)
-}
-
-function configControllers (app) {
-    return require('../controllers/admin/formulario-noticia')(app)
+    const controlForm = require('../controllers/formularioController')(app)
+    
+    app.get('/formulario', controlForm.form)
+    app.post('/noticias/salvar', controlForm.save)
 }

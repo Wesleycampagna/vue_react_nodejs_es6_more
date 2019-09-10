@@ -1,28 +1,29 @@
 module.exports = (app) => {
 
-    this.filterData = (data, callback) => {
-        console.log('enter here')
-        const connection = app.src.model.databaseconnection()
-        const noticias = new app.src.model.noticiasModel(connection)
+    this.save = (req, res) => {
 
-        noticias.save(data, callback)
+        if (filter(req.body) !== true){
+            console.log('-------------')
+            res.redirect('/noticias')
+            //res.render('admin/formulario', {error: null, news: req.body})
+        }else{
+        console.log('enter');
+            saveDataBase(req.body, app, (err, result) => {
+                // isso n sabia -> poder passar um json no render
+                //res.send('form carregado server side!') anteriormente
+                !err ? res.redirect('/noticias') : res.send({'error': 404})
+            })
+        }
+    }
+
+    this.form = (req, res) => {
+        res.render('admin/formulario', {error: null, news: {}})
     }
 
     return this
 }
 
-
-module.exports = (app) => {
-
-    this.save = () => {
-        
-    }
-
-    return this
-}
-
-
-const saveDataBase = (data, callback) => {
+const saveDataBase = (data, app, callback) => {
     const connection = app.src.model.databaseconnection()
     const noticias = new app.src.model.noticiasModel(connection)
 
@@ -41,10 +42,6 @@ function filter(data) {
     else
         return true
 }
-
-app.get('/formulario', (req, res) => {
-    res.render('admin/formulario', {error: null, news: {}})
-})
 
 /* 3 formas de se fazer a configuração dos controllers
 1 - atribui  em indexedDB.js a criação do controlador

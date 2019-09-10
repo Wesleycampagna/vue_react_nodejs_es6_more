@@ -6,13 +6,7 @@ const formularioPage = require('./routes/formulario-noticia')
 
 homePage(app)
 noticiasPage(app)
-formularioPage(app)
- */
-
-/* const formController = require('./controllers/admin/formulario-noticia') 
-
-formController(app) */
-
+formularioPage(app) */
 
 // start server on the specified port and binding host
 app.listen(5050, function() {
