@@ -9,16 +9,39 @@
 <body>
     <h1>Adicionar uma Notícia</h1>
 
+    <% if (error) { %>
+        <ul>
+            <li>
+                <%= error.title %>
+            </li>
+        </ul>
+    <% } %>
+
     <form action="/noticias/salvar" method="POST">
         <div>
             <label>título</label>
-            <input type="text", placeholder="Insira o título"
-            id="titulo" name="titulo">
+            <input type="text" placeholder="Insira o título"
+            id="titulo" name="titulo" value="<%= news.titulo %>">
+        </div>
+        <div>
+            <label>resumo</label>
+            <input type="text" placeholder="Insira o resumo"
+            id="resumo" name="resumo" value="<%= news.resumo %>">
+        </div>
+        <div>
+            <label>autor</label>
+            <input type="text" placeholder="Insira o autor"
+            id="autor" name="autor" value="<%= news.autor %>">
+        </div>
+        <div>
+            <label>data da noticia</label>
+            <input type="date" id="data_noticia" name="data_noticia"
+            placeholder="Insira a data" value="<%= news.data_noticia %>">
         </div>
         <div>
                 <label>noticia</label>
-                <textarea type="text", rows="5" cols="30" placeholder="Insira a noticia"
-                id="noticia" name="noticia"></textarea>
+                <textarea type="text" rows="5" cols="30" placeholder="Insira a noticia"
+                id="noticia" name="noticia"><%= news.noticia %></textarea>
                 <br/>
                 <input type="submit" value="enviar">
             </div>

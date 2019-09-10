@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const consign = require('consign')
 const bodyParser = require('body-parser')
-const expressValidator = require('express-validator')
+const {check, expressValidator} = require('express-validator')
 
 const app = express();
 
@@ -13,7 +13,8 @@ app.set('view engine', 'ejs')
 
 app.use(bodyParser.urlencoded({extended: true}))
 
-app.use(expressValidator())
+app.use(check())
+/* app.use(expressValidator) */
 
 /* Este consign tem acesso a todos os arquivos -> logo não precisa 
  voltar diretorios para que seja encontrado a pasta */

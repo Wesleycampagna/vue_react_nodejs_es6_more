@@ -13,13 +13,14 @@ function Noticias (connection) {
     }
 
     this.save = (data, callback) => {
-        console.log('save?')
+        console.log('save? ')
+        console.log(data)
+        console.log('|')
         /* statement = 'INSERT INTO noticias (titulo, noticia) values (' 
         statement = statement.concat(data.titulo, ', ', data.noticia, ')')
         connection.query(statement, callback) */
         _connection.query('INSERT INTO noticias set ?', data, callback)
     }
-
 }
 
 module.exports = () => {
