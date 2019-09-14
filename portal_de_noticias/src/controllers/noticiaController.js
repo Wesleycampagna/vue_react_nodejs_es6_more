@@ -18,7 +18,7 @@ module.exports = (app) => {
     
         const noticia = new Noticias(connection)
         
-        noticia.getNewById(1, (err, result) => {
+        noticia.getNewById(req.query.id, (err, result) => {
             !err ? res.render('noticias/noticia', {noticia : result}) : res.send({'error': 404})
         })
     }

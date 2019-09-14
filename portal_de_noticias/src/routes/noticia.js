@@ -49,6 +49,6 @@ module.exports = (app) => {
 module.exports = (app) => {
     const noticiaController = require('../controllers/noticiaController')(app)
 
-    app.get('/noticias', noticiaController.noticias)    
+    app.get('/noticias', noticiaController.noticias)
     app.get('/noticia', noticiaController.noticia)
 }

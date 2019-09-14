@@ -3,7 +3,7 @@ function Noticias (connection) {
     let _connection = connection
 
     this.getAllNews = (callback) => {
-        let statement = 'SELECT * FROM noticias'
+        let statement = 'SELECT * FROM noticias ORDER BY data_criacao DESC'
         _connection.query(statement, callback)
     }
 

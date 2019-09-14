@@ -2,12 +2,16 @@ module.exports = (app) => {
 
     this.save = (req, res) => {
 
-        if (filter(req.body) !== true){
+        console.log('salvando form')
+
+        let value = filter(req.body)
+
+        if (value !== true){
             console.log('-------------')
-            res.redirect('/noticias')
-            //res.render('admin/formulario', {error: null, news: req.body})
+            res.render('admin/formulario', {error: value, news: req.body})
+            return
         }else{
-        console.log('enter');
+            console.log('enter');
             saveDataBase(req.body, app, (err, result) => {
                 // isso n sabia -> poder passar um json no render
                 //res.send('form carregado server side!') anteriormente
@@ -17,6 +21,7 @@ module.exports = (app) => {
     }
 
     this.form = (req, res) => {
+        console.log('render form')
         res.render('admin/formulario', {error: null, news: {}})
     }
 

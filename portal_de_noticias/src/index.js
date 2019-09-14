@@ -9,7 +9,7 @@ noticiasPage(app)
 formularioPage(app) */
 
 // start server on the specified port and binding host
-app.listen(5050, function() {
+app.listen(5060, function() {
   // print a message when the server starts listening
   console.log("server starting.. ");
 });

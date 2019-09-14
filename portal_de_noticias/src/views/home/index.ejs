@@ -35,7 +35,7 @@
 
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="index.html">HOME</a></li>
+						<li><a href="/">HOME</a></li>
 					</ul>
 				</div>
 			</div>
@@ -46,72 +46,49 @@
 	    	<div class="row">
 	    		<div class="col-md-8">
 	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">Por Jorge</span>
-		    			<a href="noticia.html" class="noticia_titulo">Título da notícia</a>
-		    			<span class="noticia_data">07/09/2016</span>
+		    			<span class="noticia_autor"><%= fiveLastNews[0].autor %></span>
+		    			<a href="/noticia?id=<%= fiveLastNews[0].id_noticia %>" class="noticia_titulo"><%= fiveLastNews[0].titulo %></a>
+		    			<span class="noticia_data"><%= fiveLastNews[0].data_noticia %></span>
 		    			<br />
 		    			<p class="noticia_resumo">
-		    				Aqui fica o resumo da notícia principal da página com um limite de 100 caracteres!
+		    				<%= fiveLastNews[0].resumo %>
 		    			</p>
 		    		</div>
 		    	</div>
 
 	    		<div class="col-md-4">
 	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">Por Jorge</span>
-		    			<a href="noticia.html" class="noticia_titulo">Título da notícia</a>
-		    			<span class="noticia_data">07/09/2016</span>
+		    			<span class="noticia_autor"><%= fiveLastNews[1].autor %></span>
+		    			<a href="/noticia?id=<%= fiveLastNews[1].id_noticia %>" class="noticia_titulo"><%= fiveLastNews[1].titulo %></a>
+		    			<span class="noticia_data"><%= fiveLastNews[1].data_noticia %></span>
 
 		    			<br />
 		    			<p class="noticia_resumo">
-		    				Aqui fica o resumo da notícia com um limite de 100 caracteres!
+		    				<%= fiveLastNews[1].resumo %>
 		    			</p>
 		    		</div>
 		    	</div>
 	    	</div>
 
 	    	<div class="row">
+				<% for (let i = 2; i < fiveLastNews.length; i++ ) { %> 
 	    		<div class="col-md-4">
 	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">Por Jorge</span>
-		    			<a href="noticia.html" class="noticia_titulo">Título da notícia</a>
-		    			<span class="noticia_data">07/09/2016</span>
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				Aqui fica o resumo da notícia com um limite de 100 caracteres!
-		    			</p>
-		    		</div>
-		    	</div>
-
-	    		<div class="col-md-4">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">Por Jorge</span>
-		    			<a href="noticia.html" class="noticia_titulo">Título da notícia</a>
-		    			<span class="noticia_data">07/09/2016</span>
+		    			<span class="noticia_autor"><%= fiveLastNews[i].autor %></span>
+		    			<a href="/noticia?id=<%= fiveLastNews[i].id_noticia %>" class="noticia_titulo"><%= fiveLastNews[i].titulo %></a>
+		    			<span class="noticia_data"><%= fiveLastNews[i].data_noticia %></span>
 
 		    			<br />
 		    			<p class="noticia_resumo">
-		    				Aqui fica o resumo da notícia com um limite de 100 caracteres!
+		    				<%= fiveLastNews[i].resumo %>
 		    			</p>
 		    		</div>
-		    	</div>
-
-	    		<div class="col-md-4">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">Por Jorge</span>
-		    			<a href="noticia.html" class="noticia_titulo">Título da notícia</a>
-		    			<span class="noticia_data">07/09/2016</span>
-
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				Aqui fica o resumo da notícia com um limite de 100 caracteres!
-		    			</p>
-		    		</div>
-		    	</div>
+				</div>
+				<% } %>
 	    	</div>
 
 	    	<div class="row ver_mais">
-	    		<button type="button" class="btn btn-default"><a href="noticias.html">Ver todas as notícias</a></button>
+	    		<button type="button" class="btn btn-default"><a href="/noticias">Ver todas as notícias</a></button>
 	    	</div>
 
 	    </div>
