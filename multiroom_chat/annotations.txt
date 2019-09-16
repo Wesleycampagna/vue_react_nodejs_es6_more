@@ -1,0 +1,11 @@
+on('nome do evento', function (data) {}) -> a function é algo que será executado quando o
+evento 'nome do evento' ocorrer. Fica ouvindo pedidos de execução;
+
+emit('nome do evento', {}) -> ao executar o evento 'nome do evento' todos
+aqueles conectados a este evento receberão a function. Pedido para executar uma ação
+Nesse emit o objeto {} seria enviado em data de on para aqueles usuarios que tiverem essa 
+funtion em seus browsers
+
+app do express
+app.set('hash', objeto) seta valores globais (objetos globais) 
+app.get('hash')         recupera o objeto global
