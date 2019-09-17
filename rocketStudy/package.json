@@ -1,0 +1,16 @@
+{
+  "name": "rocketstudy",
+  "version": "1.0.0",
+  "description": "estudando o rocket seat",
+  "main": "index.js",
+  "author": "Wesley Campagna",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0"
+  },
+  "scripts": {
+    "dev": "babel ./main.js -o ./bundle.js -w"
+  }
+}
