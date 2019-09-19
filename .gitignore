@@ -1,4 +1,2 @@
-portal_de_noticias/node_modules/
-multiroom_chat/node_modules/
-node_modules/
+*node_modules/
 package-lock.json
