@@ -17,6 +17,8 @@ const MinnhaListaTodos = new TodoList()
 import soma, {sub, mult } from './funct'  // como existe um valor default jogo fora do {}
 import * as func from './funct'           // deste modo default functions entram como default? yes
 
+console.log('teste-unique')
+
 document.getElementById('button-todo').onclick = () => {
     MinnhaListaTodos.addTodo()
     console.log(soma(4, 3))

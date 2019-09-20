@@ -1,5 +1,5 @@
 module.exports = {
-    entry: ['@babel/polyfill','./src/newmain.js'], //classe base do código que será convertido em outras versões de js
+    entry: ['@babel/polyfill','./src/main.js'], //classe base do código que será convertido em outras versões de js
     output: {
         path: __dirname,
         filename: 'bundle.js'
