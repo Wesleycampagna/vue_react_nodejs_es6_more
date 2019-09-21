@@ -1,7 +1,7 @@
 const app = require('../config/env')
-const homePageRoute = require('./routes/home')
+const api = require('./routes/api')
 
 // start routes
-app.use('/', homePageRoute)
+app.use('/api', api)
 
-app.listen( 8080, () => console.log('server conectado!'))
+app.listen( 8071, () => console.log('server conectado!'))

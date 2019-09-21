@@ -1,4 +1,5 @@
 const mongoose = require('./database')
+const mongoosePaginate = require('mongoose-paginate')
 
 const productSchema = mongoose.mongo.Schema({
     title: {
@@ -18,7 +19,7 @@ const productSchema = mongoose.mongo.Schema({
         default: Date.now
     }
 })
-
+productSchema.plugin(mongoosePaginate)
 mongoose.mongo.model('products', productSchema)
 
 module.exports = productSchema

@@ -5,21 +5,36 @@ const connectDatabase = () => {
 }
 
 const create = (json, model) => {
-    let database_model = mongo.model(model)
-    database_model.create(json)
+    let databaseModel = mongo.model(model)
+    databaseModel.create(json)
 }
 
-/* products.create({
-    title: 'React Native',
-    description: 'Curso',
-    url: 'http://github.com/facebook/react-native'
-})
- */
+const index = async (model, page) => {
+    let databaseModel = mongo.model(model)
+    // const data = await databaseModel.find() mostra todos os registros
+    const data = await databaseModel.paginate({ /* where, order .. */ }, { page, limit: 5 })
+    return data
+}
+
+const findById = async(model, id) => {
+    let databaseModel = mongo.model(model)
+    const data = await databaseModel.findById(id)
+    return data
+}
+
+const update = async(model, id, json) => {
+    let databaseModel = mongo.model(model)
+    const data = await databaseModel.findOneAndUpdate(id, json, {new: true})    
+    return data
+}
 
 const mongoHandler = {
     connect: connectDatabase,
     mongo,
-    create
+    create,
+    index,
+    update,
+    findById
 }
 
 module.exports = mongoHandler
