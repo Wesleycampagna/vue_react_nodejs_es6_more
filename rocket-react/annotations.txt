@@ -1,0 +1,50 @@
+No react uma página é como se fosse um html normal que a gente usa
+mas com uma arquitetura a parte.
+
+No caso deste projeto por exemplo, a página a se renderizar é index.html
+Se notar nela existe apenas uma div chamada 'root'
+
+Dentro do framework existe algum llink para index.js 
+Neste index.js existe um react-dom que renderiza a tag root com os elementos 
+da tag <app /> que é justamente o arquivo chamado App.js
+-- para teste, caso altere-se o nome de App.js para App2.js quebra a estrutura 
+mas tem um hook que altera o valor em index.js pros newbie não fazer cagada!
+
+A grande primeira sacada do React é que cada minima estrutura é um component que é 
+encapsulado por outra estrutura que ambém é um Component.
+Logo, existe uma hierarquia de Components 
+
+React render um script .js como se fosse uma tag
+Isto é possivel quando a classe extends Component
+Todo Component tem um método obrigatório que é o render()
+e o render tem que retorna o conteudo html desejado.
+
+Existe uma segunda forma de fazer o processo acima que é mais direto.
+Porem este método é conhecido como stateless component 
+const variable = () => (
+    conteudo
+)
+basicamente como se escrevesse. Mas este abaixo tem 'state'
+class variable extends Component (
+    render() {
+        return conteudo
+    }
+)
+
+render() é apenas uma das funções base do react
+
+A segunda existente é o componentDidMount() que é um método que o seu conteudo é
+executado logo após o component ser rendererizado em tela. Logo, previne erros de 
+não encontrar. 
+
+state (ja mencionado) seria como atributos de um component que podem ser alterados com o tempo
+possui um estado - mutavel.
+
+no render é possivel acessar essas variaveis de estado e joga dentro do script html gerado 
+de modo dinamico. 
+Caso fosse jogado como uma variavel qualquer dentro do codigo isto nao seria possivel.
+
+
+
+
+
