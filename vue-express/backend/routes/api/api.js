@@ -22,7 +22,11 @@ router.post('/', async (req, res) => {
 // DELETE
 router.get('/:id', async (req, res) => {
     const posts = await connection() 
-    await posts.deleteOne({_id: new mongo.ObjectID(req.params.id)})
+    try{
+        await posts.deleteOne({_id: new mongo.ObjectID(req.params.id)})
+    }catch(err) {
+        console.log(err)
+    }
     res.status(200).send()
 })
 
