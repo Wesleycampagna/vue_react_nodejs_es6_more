@@ -1,7 +1,6 @@
 import api from './ApiDefault'
 
 class App {
-
     constructor() {
         this.repositories = []
         this.formEl = document.getElementById('repo-form')
@@ -21,7 +20,9 @@ class App {
         event.preventDefault()
         this.setLoading()
 
-        const repoInput = this.inputText.value 
+        console.log(this.inputText.value)
+
+        const repoInput = this.inputText.value
 
         if (repoInput === '' || 0) return
 
@@ -93,7 +94,7 @@ class App {
 
             this.inputText.value = ''
         })
-    } 
+    }
 }
 
 new App()

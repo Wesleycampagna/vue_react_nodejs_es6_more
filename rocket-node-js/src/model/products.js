@@ -8,7 +8,7 @@ const productSchema = mongoose.mongo.Schema({
     },
     description: {
         type: String,
-        required:true
+        required: true
     },
     url: {
         type: String,

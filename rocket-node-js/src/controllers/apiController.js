@@ -3,12 +3,7 @@ const mongo = require('../model/database')
 const util = require('../utils')
 
 const store = async (req, res) => {
-
-    /* const newPrduct = {
-        title: req.body.title,
-        description: req.body.description,
-        url: req.body.description
-    } */
+    console.log("this2: ", req.body);
 
     try{
         await mongo.connect()
@@ -52,7 +47,7 @@ const index = async (req, res) => {
         mongo.connect()
         data = await mongo.index(util.PRODUCT, page)
     }catch (err) {}
-    
+
     res.json(data)
 }
 
